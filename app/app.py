@@ -1,9 +1,13 @@
-from flask import Flask, render_template, request
+import os
 import joblib
+from flask import Flask, render_template, request
 import numpy as np
 
 app = Flask(__name__)
-model = joblib.load('../model/model.pkl')
+
+# Load model using absolute path
+model_path = os.path.join(os.path.dirname(__file__), '..', 'model', 'model.pkl')
+model = joblib.load(model_path)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
