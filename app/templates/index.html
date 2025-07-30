@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Iris Prediction</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <div class="container">
         <h1>Decision Tree Classifier - Iris Dataset</h1>
@@ -18,6 +20,15 @@
         {% if prediction %}
         <h2>Predicted Class: {{ prediction }}</h2>
         {% endif %}
+
+        {% if prediction %}
+        <h2>Predicted Class: {{ prediction }}</h2>
+        <h3>Decision Tree Visualization:</h3>
+        <img src="{{ url_for('static', filename='tree.png') }}" alt="Decision Tree"
+            style="width:100%; border:1px solid #ccc; border-radius:10px;">
+        {% endif %}
+
     </div>
 </body>
+
 </html>
