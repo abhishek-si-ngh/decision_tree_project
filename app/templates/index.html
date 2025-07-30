@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Decision Tree Classifier - Iris Dataset</h1>
+        <form method="POST">
+            <input type="number" step="any" name="sepal_length" placeholder="Sepal Length" required>
+            <input type="number" step="any" name="sepal_width" placeholder="Sepal Width" required>
+            <input type="number" step="any" name="petal_length" placeholder="Petal Length" required>
+            <input type="number" step="any" name="petal_width" placeholder="Petal Width" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+        <h2>Predicted Class: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
