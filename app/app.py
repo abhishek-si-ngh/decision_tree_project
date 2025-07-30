@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 app = Flask(__name__)
-model = joblib.load('model/model.pkl')
+model = joblib.load('../model/model.pkl')
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
